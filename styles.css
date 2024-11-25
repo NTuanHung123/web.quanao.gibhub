@@ -1,50 +1,135 @@
-/* General Styles */
+/* styles.css */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Màu nền trang */
 }
 
-/* Header */
 header {
-    background-color: #333; /* Màu nền header */
-    color: #fff; /* Màu chữ trong header */
+    background-color: #333;
+    color: #fff;
     padding: 1rem 0;
-    position: relative;
-}
-
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.logo {
-    position: absolute;
-    left: 1rem;
-}
-
-.logo img {
-    max-height: 50px;
-    width: auto;
+    text-align: center;
 }
 
 header h1 {
-    font-size: 1.8rem;
     margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
-/* Navigation Menu */
 nav .menu {
     display: flex;
     justify-content: center;
     list-style: none;
     margin: 0;
     padding: 0;
+    background: #444;
+}
+
+nav .menu > li {
+    position: relative;
+    margin: 0 15px;
+}
+
+nav .menu > li > a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+nav .menu > li:hover .submenu {
+    display: block;
+}
+
+nav .submenu {
+    display: none;
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    top: 100%;
+}
+
+nav .submenu li {
+    border-bottom: 1px solid #ddd;
+}
+
+nav .submenu li a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+.banner {
+    text-align: center;
+    padding: 2rem;
+    background: #f4f4f4;
+}
+
+.product-list {
+    padding: 2rem;
+}
+
+.product {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem;
+    width: 250px;
+    background: #fff;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* Header */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 75px;
+    height: auto;
+    z-index: 1000;
+}
+header {
+    background-color: #333; /* Màu nền header */
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Menu */
+nav .menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
     background-color: #444; /* Màu nền menu */
 }
 
@@ -63,19 +148,18 @@ nav .menu > li > a {
 }
 
 nav .menu > li:hover > a {
-    background-color: #555; /* Màu khi hover menu */
+    background-color: #555; /* Màu khi hover vào mục menu chính */
 }
 
 nav .submenu {
-    display: none; /* Ẩn submenu */
+    display: none; /* Ẩn submenu ban đầu */
     position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    list-style: none;
+    background: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
     margin: 0;
     padding: 0;
+    top: 100%; /* Canh vị trí submenu bên dưới menu */
     z-index: 1000;
     width: 200px;
 }
@@ -97,65 +181,72 @@ nav .submenu li a {
 }
 
 nav .submenu li a:hover {
-    background-color: #f4f4f4; /* Màu hover submenu */
+    background-color: #f4f4f4; /* Màu nền khi hover vào submenu */
 }
 
 nav .menu > li:hover .submenu {
     display: block; /* Hiển thị submenu khi hover */
 }
 
-/* Banner Section */
+/* Banner */
 .banner {
     text-align: center;
-    background-color: #f4f4f4; /* Màu nền banner */
-    padding: 2rem 1rem;
+    background: #f4f4f4;
+    padding: 2rem;
     color: #333;
     margin-bottom: 2rem;
 }
 
 .banner h2 {
-    font-size: 2rem;
     margin: 0;
+    font-size: 2rem;
 }
 
 .banner p {
-    font-size: 1.2rem;
     margin-top: 1rem;
+    font-size: 1.2rem;
 }
 
-/* Product Section */
+/* Danh sách sản phẩm */
 .product-list {
-    padding: 2rem 1rem;
-    background-color: #fff;
+    padding: 2rem;
+    background: #fff;
     text-align: center;
 }
 
 .product-list h2 {
-    font-size: 2rem;
+    text-align: center;
     color: #333;
     margin-bottom: 2rem;
+    font-size: 2rem;
 }
 
 .product-list h3 {
-    font-size: 1.5rem;
     color: #555;
-    margin: 2rem 0 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
     border-bottom: 2px solid #ddd;
     padding-bottom: 0.5rem;
 }
 
-/* Product Card */
+/* Sản phẩm */
 .product {
     display: inline-block;
-    width: 250px;
-    margin: 1rem;
     text-align: center;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #fff;
+    padding: 1rem;
+    margin: 1rem;
+    width: 250px;
+    background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    padding: 1rem;
+}
+
+.product:hover {
+    transform: translateY(-5px); /* Hiệu ứng khi hover vào sản phẩm */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .product img {
@@ -165,14 +256,14 @@ nav .menu > li:hover .submenu {
 }
 
 .product h4 {
-    font-size: 1.2rem;
     color: #333;
-    margin: 0.5rem 0;
+    margin: 0;
+    font-size: 1.2rem;
 }
 
 .product p {
-    font-size: 0.9rem;
     color: #555;
+    font-size: 0.9rem;
     margin: 0.5rem 0;
 }
 
@@ -188,17 +279,12 @@ nav .menu > li:hover .submenu {
 }
 
 .product button:hover {
-    background-color: #218838; /* Màu khi hover nút */
-}
-
-.product:hover {
-    transform: translateY(-5px); /* Hiệu ứng hover sản phẩm */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #218838;
 }
 
 /* Footer */
 footer {
-    background-color: #333;
+    background: #333;
     color: #fff;
     text-align: center;
     padding: 1rem;
@@ -206,11 +292,11 @@ footer {
 }
 
 footer h2 {
+    margin: 0 0 1rem 0;
     font-size: 1.5rem;
-    margin: 0 0 1rem;
 }
 
 footer p {
-    font-size: 0.9rem;
     margin: 0.5rem 0;
+    font-size: 0.9rem;
 }
